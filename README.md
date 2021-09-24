@@ -6,10 +6,19 @@ Inpired by the clean design of the site https://siiimple.com/ and using the API 
 
 ## Execution
 
+### Prereq
+
+It's necessary to create a .env file at servers root folder with the following content:
+
+```
+PEXELS_API_KEY=<YOUR_API_KEY>
+```
+
 ### Server
 
 ```
 $ cd server/
+$ npm install
 $ node ./index.js
 ```
 
@@ -17,5 +26,6 @@ $ node ./index.js
 
 ```
 $ cd client/
+$ npm install
 $ npm start
 ```
