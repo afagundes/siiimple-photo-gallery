@@ -1,0 +1,31 @@
+.categories {
+    background-color: var(--secondary-background-color);
+    padding: 70px;
+}
+
+.categories-container {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.categories-container__list {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-rows: min-content;
+    row-gap: 1.5rem;
+}
+
+.categories-container__list__button {
+    color: #000;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 450;
+}
+
+.categories-container__list__button:hover {
+    color: var(--secondary-color);
+    border: 0;
+}

@@ -1,0 +1,10 @@
+.photos__column {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-right: var(--photo-margin);
+}
+
+.photos__column:last-child {
+    margin-right: 0;
+}
