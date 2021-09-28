@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import HttpError from '../error/httpError.js'
 
 export function checkResponseStatus(res) {
     if (res.ok) return res;
