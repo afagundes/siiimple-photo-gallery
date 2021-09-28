@@ -41,7 +41,14 @@ app.get('/category/:id', (req, res) => {
     const resource = `collections/${req.params.id}?per_page=${pageSize}&type=photos`;
 
     fetchPexels(resource, (json) => res.json(json.media));
-})
+});
+
+app.get('/search', (req, res) => {
+    const pageSize = 80;
+    const resource = `search?query=${req.query.query}&per_page=${pageSize}`;
+
+    fetchPexels(resource, (json) => res.json(json.photos));
+});
 
 app.listen(3001, () => {
     init();

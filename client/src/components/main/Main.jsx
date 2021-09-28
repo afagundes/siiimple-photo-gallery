@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import fetchCategories from '../../api/CategoriesAPI'
-import { fetchPhotos, fetchCategoryPhotos, photoColumns } from '../../api/PhotosAPI'
+import { fetchPhotos, fetchCategoryPhotos, fetchPhotosSearch, photoColumns } from '../../api/PhotosAPI'
 
 import Categories from '../categories/Categories'
 import Search from '../search/Search'
@@ -23,10 +23,14 @@ const Main = (props) => {
         props.toggleCategoriesMenu()
     }
 
+    const searchPhotos = query => {
+        fetchPhotosSearch(query, setPhotos);
+    }
+
     return (
         <main>
             { props.openCategories ? <Categories categories={categories} fetchCategory={fetchCategory} /> : null }
-            { props.openSearch ? <Search /> : null }
+            { props.openSearch ? <Search searchPhotos={searchPhotos} /> : null }
             
             <div className="main-container">
                 <div className="photos">

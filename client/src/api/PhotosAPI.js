@@ -1,3 +1,5 @@
+const apiURL = 'http://localhost:3001';
+
 export const photoColumns = {
     columns: []
 }
@@ -19,13 +21,19 @@ function organizePhotos(allPhotos, handleAllPhotos) {
 }
 
 export function fetchPhotos(handleAllPhotos) {
-    fetch('http://localhost:3001/photos')
+    fetch(`${apiURL}/photos`)
     .then(res => res.json())
     .then(res => organizePhotos(res, handleAllPhotos))
 }
 
 export function fetchCategoryPhotos(categoryID, handleAllPhotos) {
-    fetch(`http://localhost:3001/category/${categoryID}`)
+    fetch(`${apiURL}/category/${categoryID}`)
     .then(res => res.json())
     .then(res => organizePhotos(res, handleAllPhotos))
+}
+
+export function fetchPhotosSearch(query, handleAllPhotos) {
+    fetch(`${apiURL}/search?query=${query}`)
+    .then(res => res.json())
+    .then(res => organizePhotos(res, handleAllPhotos));
 }
